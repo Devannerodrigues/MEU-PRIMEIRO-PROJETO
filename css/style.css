@@ -10,3 +10,27 @@ h2 {
     color: green; 
    } 
    
+   #div-form{
+width: 400px;
+height: 500px;
+background-color: blueviolet;
+margin: 20px;
+padding: 40px;
+
+
+   }
+
+   label{
+display: block;
+margin-right: 500px;
+padding: 10px 10px;
+
+
+   }
+
+   input{
+display: block;
+margin: 10px 10px;
+margin-top: 10px;
+
+   }
