@@ -1,36 +1,38 @@
-body{
-font-family: Arial, sans-serif;
-text-align: center;
-background-color: #f5f5f5;
+body {
+   font-family: Arial, sans-serif;
+   text-align: center;
+   background-color: #f5f5f5;
 }
-h1{
-    color: navy;
+
+h1 {
+   color: navy;
 }
-h2 { 
-    color: green; 
-   } 
-   
-   #div-form{
-width: 400px;
-height: 500px;
-background-color: blueviolet;
-margin: 20px;
-padding: 40px;
+
+h2 {
+   color: green;
+}
+
+#div-form {
+   width: 400px;
+   height: 500px;
+   background-color: blueviolet;
+   margin: 20px auto;
+   padding: 40px;
 
 
-   }
+}
 
-   label{
-display: block;
-margin-right: 500px;
-padding: 10px 10px;
+label {
+   display: block;
+   margin-right: 500px;
+   padding: 10px 10px;
 
 
-   }
+}
 
-   input{
-display: block;
-margin: 10px 10px;
-margin-top: 10px;
+input {
+   display: block;
+   margin: 10px 10px;
+   margin-top: 10px;
 
-   }
+}
