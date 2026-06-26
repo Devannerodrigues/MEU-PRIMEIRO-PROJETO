@@ -1,33 +1,87 @@
-//comentário de uma linha 
-/*
-comentário de multiplas linhas
-É possivel ter várias linhas
+const produtos = [];
 
-*/
+function calcularAdicional(valorTotal) {
 
-//COMANDO DE SAIDA
-console.log("Olá mundo!!!")
+    if (valorTotal <= 3000) {
+        return "Isento";
+    }
+    else if (valorTotal <= 8000) {
+        return valorTotal * 0.05;
+    }
+    else if (valorTotal <= 12000) {
+        return valorTotal * 0.10;
+    }
+    else if (valorTotal <= 20000) {
+        return valorTotal * 0.15;
+    }
+    else {
+        return valorTotal * 0.20;
+    }
 
-//DECLARAÇÃO DE VARIÁVEL´
-let num = 10
-var num2 = 50
-const num3 = 100
-console.log(num)
-console.log(num2)
-console.log(num3)
-
-if(true){
-    let num4 = 250
-    console.log(num4)
-    
-    var num5 = 140
 }
 
-console.log(num5)
+function exibirProdutos() {
 
-num = 1802
-console.log(num)
+    const tabela = document.getElementById("listaProdutos");
 
-num2 = 58
+    tabela.innerHTML = "";
 
-console.log(num2)
+    for (let i = 0; i < produtos.length; i++) {
+
+        let produto = produtos[i];
+
+        let linha = `
+            <tr>
+                <td>${produto.descricao}</td>
+                <td>R$ ${produto.valor.toFixed(2)}</td>
+                <td>${produto.quantidade}</td>
+                <td>R$ ${produto.total.toFixed(2)}</td>
+                <td>
+                    ${
+                        produto.adicional === "Isento"
+                        ? "Isento"
+                        : "R$ " + produto.adicional.toFixed(2)
+                    }
+                </td>
+            </tr>
+        `;
+
+        tabela.innerHTML += linha;
+    }
+
+}
+
+document.getElementById("formProduto")
+.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    let descricao = document.getElementById("descricao").value;
+
+    let valor = Number(
+        document.getElementById("valor").value
+    );
+
+    let quantidade = Number(
+        document.getElementById("quantidade").value
+    );
+
+    let total = valor * quantidade;
+
+    let adicional = calcularAdicional(total);
+
+    let produto = {
+        descricao,
+        valor,
+        quantidade,
+        total,
+        adicional
+    };
+
+    produtos.push(produto);
+
+    exibirProdutos();
+
+    document.getElementById("formProduto").reset();
+
+});
